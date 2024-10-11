@@ -1,0 +1,1081 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\title{Olimpiadi di Fisica}
+\author{Federico Roccaforte}
+\date{Gennaio - Aprile 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduzione} \addcontentsline{toc}{section}{$\quad$Introduzione}
+Questo è un documento che ho scritto seguendo gli appunti e le lezioni dati nel corso di preparazione alla fase distrettuale dei Campionati di Fisica, organizzato dalla sezione dell'Associazione per l'Insegnamento della Fisica di Catania. Se va tutto bene mi trovate a Senigallia.
+
+\tableofcontents
+
+\section{Informazioni generali}
+\subsection{Le unità di misura}
+Come unità di misura useremo le unità del sistema internazionale, cioè:
+\begin{enumerate}
+    \item Lunghezza (metro):  m
+    \item Massa (chilogrammo):  kg
+    \item Tempo (secondo):  s
+    \item Intensità di corrente elettrica (Ampere):  A
+    \item Temperatura (Kelvin):  K
+    \item Quantità di sostanza (mole):  mol
+    \item Intensità luminosa (candela):  cd
+\end{enumerate}
+Queste grandezze fisiche hanno definizioni ben precise che cercano di essere indipendenti da errori di misurazione.
+Tutte le altre grandezze fisiche possono essere espresse tramite una combinazione delle precedenti, ad esempio:
+\begin{enumerate}
+    \item Area:  $m^2$
+    \item Volume: $m^3$
+    \item Velocità: $m\,s^{-1}$
+    \item Accelerazione: $m\,s^{-2}$
+    \item Forza (Newton): N [$kg\,m\,s^{-2}$] 
+    \item Energia (Joule): J [$kg\,m^2\,s^{-2}$] 
+    \item Potenza (Watt): W [$kg\,m^2\,s^{-3}$] 
+    \item Tensione (Volt): V [$kg\,m^2\,s^{-3}\,A^{-1}$] 
+\end{enumerate}
+
+\subsection{Le cifre significative}
+Per i propositi della gara, bisogna trovare una formula per la soluzione del quesito, inserire i valori, e indicare il risultato con tre cifre significative.
+Sarà quindi un numero compreso fra $1,00$ e $9,99$ estremi inclusi moltiplicato per una potenza di $10$.
+
+\section{Forze e momenti}
+
+\subsection{Le forze}
+Le forze sono il più comune elemento della fisica, e si misurano in $N$ (Newton). Le forze più comuni che troveremo sono:
+\begin{enumerate}
+    \item La forza peso
+    $F_p=mg$
+    \item La forza di attrito
+    $F_a=\mu F_{\perp}$
+    \item La forza elastica
+    $F_e=-kx$
+    \item La forza di gravità
+    $F_g=GMm/r^2$
+    \item La forza di Coloumb
+    $F_C=qQ/4\pi r^2 \epsilon_0$
+\end{enumerate}
+Sono spesso associate alla forza di gravità le leggi di Keplero.
+\begin{enumerate}
+    \item Le orbite dei pianeti sono ellittiche e il sole occupa uno dei due fuochi.
+    \item Durante l’orbita il raggio vettore (che congiunge un pianeta con il Sole) descrive aree uguali in tempi uguali.
+    \item Il rapporto tra il quadrato del periodo di rivoluzione e il cubo del semiasse maggiore dell’orbita è costante.
+\end{enumerate}
+
+\subsection{I momenti}
+Ricordiamo inoltre la definizione di momento torcente:
+\begin{equation}
+    \Vec{M}=\Vec{r}\times\Vec{F}\implies M=rF\sin{\alpha}
+\end{equation}
+Dove $\alpha$ è l'angolo compreso fra i due vettori. E' importante ricordare che il prodotto vettoriale è un'operazione anticommutativa, cioè $\Vec{A}\times\Vec{B}=-\Vec{B}\times\Vec{A}$. Per scegliere il segno affidarsi alla regola della mano destra.
+
+Il momento torcente viene misurato in $N \cdot m$, che viene distinto dai Joule ($J$) nonostante hanno dimensionalmente le stesse unità.
+
+
+A volte consideriamo il momento di una coppia di forze, $F_1$ e $F_2$, uguali e opposte, poste su rette parallele. La forza totale è nulla, ma il momento no, quindi causano esclusivamente una rotazione, con momento torcente $M$:
+\begin{equation}
+    M=r \, F
+\end{equation}
+Dove $F$ è il modulo di una singola forza e $r$ è la distanza fra i punti di applicazione delle due forze. Il verso è dato dalla regola della mano destra (uscente antiorario, entrante orario).
+
+\section{Statica}
+\subsection{Le condizioni di un corpo statico}
+In un punto materiale la condizione per la quale il corpo non si muove è che la somma delle forze applicate sul corpo è nulla.
+
+In un corpo rigido i punti che compongono il corpo si trovano a distanze relative prefissate e invariabili, perciò il corpo non può deformarsi ma può ruotare e traslare. Perciò affinché il corpo sia fermo la somma vettoriale di tutte le forze deve essere nulla e lo stesso vale per i momenti torcenti.
+\begin{equation}
+    \begin{cases}
+        \Vec{F}_{tot}=0\\
+        \Vec{M}_{tot}=0
+    \end{cases}
+\end{equation}
+Nel caso in cui il corpo si trovi su un piano ($xy$), le equazioni diverse in componenti diventano:
+\begin{equation}
+    \begin{cases}
+        F_{x\,tot}=0\\
+        F_{y\,tot}=0\\
+        M_{z\,tot}=0
+    \end{cases}
+\end{equation}
+
+
+\subsection{Il centro di massa}
+Il centro di massa $R$ di un sistema composto da $n$ corpi puntiformi di massa $m_i$ ha coordinate determinate da:
+\begin{equation}
+    \Vec{R}=\frac{\sum_{i=1}^n m_i \Vec{r}_i}{\sum_{i=1}^n m_i}
+\end{equation}
+Nel caso continuo, come ad esempio in un corpo rigido, l'equazione diventa:
+\begin{equation}
+    \Vec{R}=\frac{1}{m} \int_V \Vec{r} \rho(r) \, dV
+\end{equation}
+Il centro di massa gode di alcune proprietà:
+\begin{enumerate}
+    \item Il centro di massa di due punti si trova sul segmento che li congiunge e la divide in parti inversamente proporzionali alle masse.
+    \item Se tutti i punti appartengono a un piano o a una retta, anche il centro di massa appartenente allo stesso piano o retta.
+    \item Il centro di massa si trova sui piani di simmetria del corpo, se presenti. Se sono presenti più piani, si trova sull'intersezione.
+    \item Il centro di massa di un corpo coincide con il centro di massa dei centri di massa di un numero di parti del corpo.
+    \item Il centro di massa si trova sempre all'interno di ogni regione convessa che contiene tutta la massa del corpo.
+\end{enumerate}
+
+
+\section{Dinamica}
+
+\subsection{I principi della dinamica}
+
+Legate allo studio della dinamica sono tre principi, definite per la prima volta da Newton:
+\begin{align}
+    \vec{v} \; costante &\implies \Vec{F}_{tot}=0 \\
+    \Vec{F}&=m\vec{a} \\
+    \Vec{F}_{ab}&=-\Vec{F}_{ba} 
+\end{align}
+Spesso per risolvere un problema con più corpi conviene impostare un sistema in cui si considera il secondo principio singolarmente per ogni corpo.
+
+\subsection{I sistemi di riferimento}
+I tre principi funzionano solo in sistemi di riferimento inerziali.
+Ogni sistema di riferimento inerziale si muove di moto rettilineo uniforme rispetto agli altri sistemi di riferimento inerziali.
+Se l'origine del sistema si muove a velocità costante $\Vec{u}$ rispetto a un altro sistema a riposo, si avrà che:
+\begin{equation}
+    \begin{cases}
+        \vec{s}\,'=\vec{s}-\vec{u}t \\
+        \vec{v}\,'=\vec{v}-\vec{u}\\
+        \vec{a}\,'=\vec{a}
+    \end{cases}
+\end{equation}
+Se il sistema di riferimento non è inerziale si osserveranno forze apparenti, come la forza centrifuga o la forza di Coriolis.
+
+
+\section{Moti}
+Considerando un punto materiale o un centro di massa, essi si muovono seguendo relazioni prevedibili. A seguito sono riportati i tipi di moto più comuni.
+
+\subsection{Il moto parabolico}
+Il moto di un corpo lanciato sulla terra è detto parabolico, in quanto segue una parabola. Scomponendo il moto in due direzioni perpendicolari $x$ e $y$, dove il verso positivo è verso l'alto, si ha che:
+\begin{equation}
+    \begin{cases}
+        F_x=0\\
+        F_y=-mg
+    \end{cases}
+\end{equation}
+Da questo sistema si ricavano le equazioni del moto sugli assi, che sono dunque rispettivamente:
+\begin{equation}
+    \begin{cases}
+        x(t)=x_0+v_{0x}t \\
+        y(t)=y_0+v_{0y}t-gt^2/2
+    \end{cases}
+\end{equation}
+
+
+\subsection{Il moto circolare}
+Nei moti circolari si usano spostamenti angolari anziché fisici. Percorrendo una distanza $\Delta l$ su un arco di circonferenza di raggio $r$, si ha percorso una distanza angolare di $\Delta\phi=\Delta l/r$ 
+Analogamente alla velocità, nei moti circolari si ha la velocità angolare, definita come:
+\begin{equation}
+    \omega = \frac{\Delta\phi}{\Delta t}
+\end{equation}
+La velocità tangenziale è perciò $v=\omega r$. L'accelerazione centripeta che fa percorrere una circonferenza al corpo è invece $a_c=v\omega=\omega^2r=v^2/r$.
+Nel caso in cui il corpo acceleri lungo la circonferenza, si avrà una accelerazione tangenziale $a_t=\alpha r$ dove $\alpha$ è l'accelerazione angolare.
+Nel moto circolare uniforme la velocità angolare è costante, perciò $\omega=2\pi/T$, dove $T$ è il periodo, cioè il tempo impiegato per compiere una rotazione completa.
+
+
+\subsection{Il moto armonico}
+Il moto armonico è una proiezione di un moto circolare lungo un diametro, e ha perciò le equazioni:
+\begin{equation}
+    \begin{cases}
+        x(t)=A \cos{(\omega t + \phi)}\\
+        v(t)=-A \omega\sin{(\omega t + \phi)}\\
+        a(t)=-A \omega^2\cos{(\omega t + \phi)}\\
+    \end{cases}
+\end{equation}
+Alcuni esempi di moto armonico sono le molle e i pendoli per piccoli angoli.
+
+
+\section{Leggi di conservazione}
+Fra le quantità conservate in fisica le più famose sono l'energia, la quantità di moto e il momento angolare.
+
+\subsection{La conservazione dell'energia}
+Il lavoro di una forza costante è il prodotto scalare fra il vettore forza e il vettore spostamento:
+\begin{equation}
+    W=\vec{F}\cdot\Delta\vec{s}=F\Delta s \cos{\theta}
+\end{equation}
+L'energia cinetica di un corpo è data da:
+\begin{equation}
+    K=\frac{1}{2}mv^2    
+\end{equation}
+Il teorema delle forze vive afferma che il lavoro compiuto dalla forza agente su un punto materiale sul percorso da $A$ a $B$ è uguale alla variazione di energia cinetica.
+\begin{equation}
+    W=\Delta K
+\end{equation}
+L'energia potenziale associata a una forza alla quale si riferisce, esprime l'energia immagazzinata dal corpo. Per la forza peso è:
+\begin{equation}
+    U=mgh
+\end{equation}
+Per la forza elastica invece è:
+\begin{equation}
+    U=\frac{1}{2}kx^2
+\end{equation}
+In un sistema senza forze non conservative si conserva l'energia meccanica (teorema di conservazione dell'energia meccanica):
+\begin{equation}
+    \Delta E=0
+\end{equation}
+L'energia meccanica è la somma di energia cinetica e potenziale.
+\begin{equation}
+    E=K+U
+\end{equation}
+Se sul sistema agiscono forze non conservative, il lavoro delle forze non conservative è uguale alla variazione di energia meccanica:
+\begin{equation}
+    W_{nc}=\Delta E
+\end{equation}
+
+
+\subsection{La conservazione della quantità di moto}
+La quantità di moto è definita come:
+\begin{equation}
+    \vec{p}=m\vec{v}
+\end{equation}
+L'impulso di una forza costante è uguale a:
+\begin{equation}
+    \Vec{I}=\Vec{F}\Delta t
+\end{equation}
+Per forze non costanti l'impulso è definito come:
+\begin{equation}
+    \Vec{I}=\int_{t_1}^{t_2} \Vec{F}\, dt
+\end{equation}
+Il teorema dell'impulso afferma che l'impulso è uguale alla variazione della quantità di moto:
+\begin{equation}
+    \Vec{I}=\Delta \Vec{p}
+\end{equation}
+Riordinando si può trovare un'altra espressione per la seconda equazione della dinamica:
+\begin{equation}
+    \Vec{F}=\frac{\Delta \Vec{p}}{\Delta t}
+\end{equation}
+Quindi la quantità di moto si conserva se la risultante delle forze esterne sul sistema è nulla.
+La conservazione della quantità di moto viene usata spesso negli urti. 
+Considerando un urto elastico fra due corpi, $p$ e $E$ si conservano.
+L'urto dove i due corpi rimangono uniti è detto completamente anelastico e solo $p$ è conservato.
+Tutti gli altri urti sono detti anelastici se $p$ si conserva.
+Ricordando il centro di massa, la sua quantità di moto è la somma delle quantità di moto di ogni sua parte e perciò si ha:
+\begin{equation}
+    \Vec{R}=\frac{\sum_{i=1}^n m_i \Vec{r}_i}{\sum_{i=1}^n m_i}
+\end{equation}
+E la quantità di moto totale è:
+\begin{equation}
+    \Vec{p}_{tot}=\sum_{i=1}^n m_i \Vec{v}_i = m_{tot} \Vec{v}_{cm}
+\end{equation}
+
+\subsection{La conservazione del momento angolare}
+Il momento angolare è l'analogo rotazionale della quantità di moto, come il momento (torcente) è l'analogo delle forze.
+\begin{equation}
+    \begin{cases}
+        \Vec{L}=\vec{r}\times\Vec{p} \\
+        \Vec{M}=\vec{r}\times\Vec{F} \\
+    \end{cases}
+\end{equation}
+Per questa definizione si ha che, per momenti costanti:
+\begin{equation}
+    \Delta \Vec{L}=\vec{M} \Delta t
+\end{equation}
+Per corpi non puntiformi l'espressione del momento angolare è:
+\begin{equation}
+    L=I\omega
+\end{equation}
+Dove $\omega$ è la velocità angolare del corpo e $I$ è il momento di inerzia, definito come:
+\begin{equation}
+    I=\int_V \rho(r) r^2 \, dV
+\end{equation}
+In questo contesto l'energia cinetica rotazionale è:
+\begin{equation}
+    K=\frac{1}{2}I\omega^2
+\end{equation}
+Proprio come la quantità di moto si conserva se la somma delle forze esterne sul sistema è nulla, il momento angolare si conserva se la somma dei momenti esterni sul sistema è nulla.
+
+\section{Fluidi}
+\subsection{Introduzione ai fluidi}
+In preparazione all'argomento della termodinamica approfondiamo i fluidi.
+Nei fluidi conviene pensare in termini di densità invece che massa e pressione invece che forza.
+
+\subsubsection{La densità}
+La densità, solitamente espressa con la lettera greca rho $\rho$, è, nel caso di un corpo uniforme, la massa fratto il volume.
+\begin{equation}
+    \rho = m/V \qquad [kg\,m^{-3}]
+\end{equation}
+
+\subsubsection{La pressione}
+La pressione è definita come la forza (perpendicolare) fratto l'area $S$ sulla quale è applicata:
+\begin{equation}
+    p=F_{\perp}/S \qquad [Pa = N \,m^{-2} = kg\,m^{-1}\,s^{-2}]
+\end{equation}
+La pressione a volte è misurata in altre unità, come:
+\begin{enumerate}
+    \item $1 \;atm = 1,013 \cdot 10^5 \;Pa$
+    \item $1 \;bar = 10^5 \;Pa$
+    \item $760 \;mmHg = 1 \;atm$
+\end{enumerate}
+
+\subsection{Statica dei fluidi}
+Ci sono tre elementi principali da ricordare nella statica dei fluidi, che sono qua elencati:
+\begin{enumerate}
+    \item Principio di Pascal
+    \item Legge di Stevino
+    \item Principio di Archimede
+\end{enumerate}
+
+\subsubsection{Il principio di Pascal}
+Il principio di Pascal enuncia:
+
+\vspace{3mm}
+\textit{Una variazione di pressione applicata a un fluido confinato
+viene trasmessa a ogni porzione del fluido e alle pareti del contenitore.}
+\vspace{3mm}
+
+Cioè, se abbiamo un fluido in un contenitore e applichiamo una pressione, quella pressione viene applicata su tutto il fluido e sulle pareti del contenitore.
+
+\subsubsection{La legge di Stevino}
+La legge di Stevino afferma che la pressione in un fluido a profondità $h$ è:
+\begin{equation}
+    p=p_0+\rho g h
+\end{equation}
+Dove $\rho$ è la densità del fluido e $p_0$ è la pressione esterna.
+Una applicazione della legge di Stevino è il problema dei vasi comunicanti con due fluidi immiscibili.
+
+\subsubsection{Principio di Archimede}
+Un corpo immerso in un fluido riceve una forza verso l'alto dovuta alla differenza di pressione, di modulo pari a:
+\begin{equation}
+    F_A=\rho V g
+\end{equation}
+Dove $\rho$ è la densità del fluido e $V$ il volume di fluido spostato.
+
+\subsection{Dinamica dei fluidi}
+Nel caso in cui i fluidi siano in movimento, dopo aver introdotto la portata, abbiamo un altro paio di equazioni con le quali possiamo lavorare: l'equazione di continuità e l'equazione di Bernoulli.
+
+\subsubsection{La portata}
+La portata $Q$ misura il volume $V$ di liquido che attraversa una sezione $S$ in una certa quantità di tempo $t$. E' quindi definita come:
+\begin{equation}
+    Q=V/t=S l/t=Sv
+\end{equation}
+
+\subsubsection{L'equazione di continuità}
+Se prendiamo nello stesso tubo due masse uguali, alla stessa altezza, ma in punti non necessariamente con lo stesso diametro, possiamo derivare la seguente forma:
+\begin{align*}
+    m_1&=m_2 \\
+    \rho_1 V_1&=\rho_2 V_2 \\
+    \rho_1 S_1 l_1&=\rho_2 S_2 l_2 \\
+    \rho_1 S_1 l_1 /\Delta t&=\rho_2 S_2 l_2/\Delta t  \\
+    \rho_1 S_1 v_1 &=\rho_2 S_2 v_2
+\end{align*}
+Quindi l'equazione di continuità dice che:
+\begin{equation}
+    \rho S v \qquad e' \; costante
+\end{equation}
+A volte $\rho S v$ è chiamata portata massiccia. Nel caso di un fluido incomprimibile $\rho$ può essere cancellato e otteniamo che la portata volumetrica è costante.
+
+\subsubsection{L'equazione di Bernoulli}
+In modo simile l'equazione di Bernoulli stabilisce la conservazione dell'energia.
+La variazione dell'energia meccanica è uguale al lavoro delle forze non conservative, quindi abbiamo un punto di partenza:
+\begin{align*}
+    \Delta E&=L \\
+    \Delta K+ \Delta U&=-V\Delta p  \\
+    \frac{1}{2}m(v^2_2-v^2_1)+ mg(h_2-h_1)&=V(p_1-p_2) \\
+    \frac{1}{2}\rho(v^2_2-v^2_1)+ \rho g(h_2-h_1)&=p_1-p_2 \\
+     p_2 + \frac{1}{2}\rho v^2_2+ \rho gh_2&=p_1 +\frac{1}{2}\rho v^2_1+ \rho gh_1
+\end{align*}
+Quindi l'equazione di Bernoulli dice che:
+\begin{equation}
+    p + \frac{1}{2}\rho v^2+ \rho gh \qquad e' \; costante
+\end{equation}
+
+
+
+\section{Termologia}
+La termologia si occupa di calore, temperatura, pressione e volume. La temperatura è l'energia cinetica media delle particelle che compongono il sistema. Il sistema è cioè che stiamo considerando, l'ambiente è la zona esterna. Una sorgente termica è un corpo a una determinata temperatura. Un calorimetro misura la variazione di temperatura per una quantità di energia data.
+
+\subsection{Le scale termometriche}
+Nel mondo sono usate tre scale termometriche:
+\begin{enumerate}
+    \item $K$ Kelvin
+    \item $^{\circ} C$ Celsius
+    \item $^{\circ} F$ Fahrenheit
+\end{enumerate}
+Le regole per convertire da una scala all'altra sono:
+\begin{itemize}
+    \item $^{\circ} C \to K: \qquad T=t\,K/^{\circ}C+273.15K$
+    \item $^{\circ} C \to ^{\circ} F: \qquad T=\frac{9}{5}t\,^{\circ}F/^{\circ}C+32^{\circ}F$
+\end{itemize}
+
+
+\subsection{La capacità termica, il calore specifico e il calore latente}
+La capacità termica $C$ di un corpo è definita come la quantità di energia assorbita dal corpo stesso, fratto la variazione di temperatura.
+\begin{equation}
+    C=\frac{Q}{\Delta T}
+\end{equation}
+Quindi la capacità termica misura l'energia necessaria per aumentare la temperatura di un grado Kelvin (o Celsius). 
+Il calore specifico $c$ misura invece l'energia necessaria per aumentare di un grado un chilo della sostanza, ed è perciò:
+\begin{equation}
+    c=\frac{C}{m}
+\end{equation}
+In modo analogo, la capacità termica molare è definita come:
+\begin{equation}
+    C_{mol}=\frac{C}{n}
+\end{equation}
+Da questi si ricava l'equazione fondamentale della calorimetria:
+\begin{equation}
+    Q=mc\Delta T=nC_{mol}\Delta T
+\end{equation}
+Durante un passaggio di stato, il sistema può assorbire calore senza aumentare di temperatura. Il calore latente $L$ è:
+\begin{equation}
+    Q=mL
+\end{equation}
+Per ogni materiale si ha un calore latente diverso per fusione e ebollizione, e fusione e condensazione sono semplicemente gli opposti dei processi opposti.
+
+\subsection{La propagazione del calore}
+Il calore si propaga per conduzione, convezione o irraggiamento, e segue le seguenti formule:
+\begin{equation}
+    \frac{Q}{\Delta T}=\lambda S \frac{\Delta t}{d}
+\end{equation}
+Questa è la legge di Fourier per la conduzione nei solidi attraverso una lastra di spessore $d$, area di contatto con i serbatoi termici $S$ e conducibilità termica $\lambda$.
+In modo analogo consideriamo la legge di Stefan-Boltzmann per l'irraggiamento:
+\begin{equation}
+    \frac{\Delta E}{\Delta t}=e\sigma S T^4
+\end{equation}
+Questa legge usa la costante di Stefan-Boltzmann $\sigma=5,67\times 10^{-8} W\,m^{-2}\,K^{-4}$ e $e$ è l'emissività, un numero puro. 
+
+
+\section{Termodinamica}
+
+\subsection{Il principio zero}
+Una sorgente termica è un sistema a una certa temperatura. Il principio zero della termodinamica afferma:
+\vspace{3mm}
+
+\textit{Se due corpi A e B sono in equilibrio termico con un terzo corpo C, allora A e B sono in equilibrio termico.}
+\vspace{3mm}
+
+Due corpi messi a contatto tendono a raggiungere una temperatura comune, trasmettendo energia dal più caldo al più freddo. Questa energia è chiamata calore ($Q$). La trasmissione del calore può avvenire \textit{per conduzione, per convezione o per irraggiamento}.
+
+
+\subsection{Le leggi di Gay-Lussac e Boyle}
+Le trasformazioni possono essere isobare, isocore, isotermiche, adiabatiche e cicliche. La prima legge di Gay-Lussac afferma che il volume di un gas a pressione costante (isobara) si espande seguendo questa legge:
+\begin{equation}
+    V=V_0 (1+\alpha \Delta T) \quad \implies \quad \Delta V/\Delta T \;costante
+\end{equation}
+Dove $\alpha$ è il coefficiente di dilatazione volumica.
+Una legge analoga può essere scritta per un caso monodimensionale, dove $\alpha_l$ diventa coefficiente di dilatazione lineare:
+\begin{equation}
+    l=l_0(1+\alpha_l \Delta T)
+\end{equation}
+In modo analogo in una trasformazione a volume costante (isocora), la seconda legge di Gay-Lussac dice:
+\begin{equation}
+    p=p_0(1+\alpha \Delta T) \quad \implies \quad \Delta p/\Delta T \;costante
+\end{equation}
+Dove $\alpha$ è nuovamente il coefficiente di dilatazione volumica.
+La legge di Boyle afferma invece che a temperatura costante (isoterma), il prodotto di pressione e volume è costante.
+\begin{equation}
+    pV \; costante
+\end{equation}
+Queste tre leggi valgono nel caso in cui il gas sia perfetto, cioè segue l'equazione:
+\begin{equation}
+    pV=nRT
+\end{equation}
+Dove $n$ è il numero di moli del gas e $R$ la costante dei gas perfetti.
+
+\subsection{L'energia interna}
+L'energia interna $U$ è l'energia posseduta dal sistema, ed è, nel  caso di un gas perfetto, proporzionale alla temperatura:
+\begin{equation}
+    U=\frac{l}{2}nRT=\frac{l}{2}Nk_BT
+\end{equation}
+Dove $l$ è il numero di gradi di libertà delle molecole del sistema e $k_B$ è la costante di Boltzmann ed è pari a $1,38 \times 10^{-23} J/K$.
+L'energia cinetica media di una particella è perciò:
+\begin{equation}
+    K_m=\frac{l}{2}k_BT
+\end{equation}
+
+
+\subsection{Il primo principio}
+La variazione di energia interna è uguale al calore assorbito meno il lavoro compiuto dal sistema.
+\begin{equation}
+    \Delta U = Q - W
+\end{equation}
+Questa legge vale per tutte le trasformazioni, che possono essere di vari tipi, fra i quali prendiamo in considerazione le trasformazioni isobare, isocore, isoterme, adiabatiche e cicliche.
+
+\subsubsection{Le trasformazioni}
+Nelle trasformazioni isobare la pressione è costante ($\Delta p=0$), e perciò si ha che:
+\begin{equation}
+    \begin{cases}
+        Q=nC_p\Delta T\\
+        W=p\Delta T=nR\Delta T\\
+        \Delta U=n(C_p-R)\Delta T
+    \end{cases}
+\end{equation}
+Difatti, si può verificare che $\Delta U=nC_V\Delta T$ vale per ogni trasformazione.
+\vspace{3mm}
+
+Considerando una trasformazione isocora ($\Delta V=0$), visto che lo spostamento è nullo, il lavoro è nullo.
+\begin{equation}
+    \begin{cases}
+        Q=nC_V\Delta T\\
+        W=0\\
+        \Delta U=nC_V\Delta T
+    \end{cases}
+\end{equation}
+\vspace{3mm}
+
+Passando alle isoterme ($\Delta T=0$), sappiamo che nei gas perfetti l'energia interna dipende solo dalla temperatura e perciò $\Delta U=0$.
+\begin{equation}
+    \begin{cases}
+        Q=W\\
+        W=nRT\,ln(V_f/V_i)=nRT\,ln(p_i/p_f)\\
+        \Delta U=0
+    \end{cases}
+\end{equation}
+\vspace{3mm}
+
+Infine consideriamo una trasformazione adiabatica ($Q=0$).
+\begin{equation}
+    \begin{cases}
+        Q=0 \\
+        \Delta U=-W \\
+        pV^\gamma,\; TV^{\gamma-1},\; Tp^{\frac{1-\gamma}{\gamma}}\; costanti
+    \end{cases}
+\end{equation}
+Dove $\gamma$ è l'esponente gamma ed è pari al rapporto fra capacità termica a pressione costante e a volume costante. Le due sono legate pure dalla relazione di Mayer e sono pari a: 
+\begin{equation}
+    \begin{cases}
+        C_V=\frac{l}{2}R \\
+        C_p-C_V=R \\
+        \gamma=\frac{C_p}{C_V}
+    \end{cases}
+\end{equation}
+
+
+
+
+\subsubsection{Le trasformazioni cicliche}
+Si dice ciclica una trasformazione nella quale lo stato iniziale e finale coincidono. In tal caso tutte le variazioni delle funzioni di stato, come $\Delta U$, sono nulle. Nel piano $p-V$ il lavoro compiuto dal sistema è l'area contenuta dalla curva, ed è positivo se va in senso orario, altrimenti è negativo.
+
+\subsection{Le macchine termodinamiche}
+In termodinamica consideriamo delle macchine ideali che possono essere classificate in tre categorie:
+
+Una macchina termica è un dispositivo che durante una trasformazione ciclica assorbe calore da un serbatoio caldo e compie lavoro.
+
+Una macchina frigorifera è un dispositivo che durante una trasformazione ciclica assorbe calore da un serbatoio freddo e subisce lavoro per dare calore a un serbatoio caldo.
+
+Una pompa di calore è un dispositivo che durante una trasformazione ciclica trasferisce calore da un serbatoio freddo a uno caldo, grazie al lavoro subito dall'ambiente.
+
+Il funzionamento di una macchina termodinamica è schematizzato tramite i diagrammi di Fermi.
+
+
+\subsubsection{Il rendimento e i coefficienti di prestazione e di guadagno}
+Il rendimento di una macchina termica è il rapporto tra il lavoro compiuto dalla macchina e il calore assorbito dal serbatoio caldo. Si indica con la lettera greca eta $\eta$.
+\begin{equation}
+    \eta=\frac{W}{Q_2}
+\end{equation}
+Poiché la variazione di energia interna è nulla in una trasformazione ciclica, si ha che:
+\begin{equation}
+    W=Q_2-|Q_1|
+\end{equation}
+Per indicare maggiormente che $Q_1$ è il calore ceduto (negativo), lo si evidenzia con il valore assoluto. Il rendimento diventa quindi:
+\begin{equation}
+    \eta=1-\frac{|Q_1|}{Q_2}\geq 1 \quad \implies \quad\eta=1 \iff Q_1=0
+\end{equation}
+\vspace{3mm}
+
+L'efficienza di una macchina frigorifera o coefficiente di prestazione, è il rapporto fra il calore $Q_1$ assorbito dal serbatoio freddo e il lavoro compiuto dall'ambiente sulla macchina. Si indica con la omega $\omega$.
+\begin{equation}
+    \omega=\frac{Q_1}{|W|}
+\end{equation}
+Nuovamente poiché $\Delta U=0$, si ha che:
+\begin{equation}
+    |W|=|Q_2|-Q_1
+\end{equation}
+Quindi il coefficiente di prestazione sarà:
+\begin{equation}
+    \omega=\frac{Q_1}{|Q_2|-Q_1}
+\end{equation}
+$\omega$ è sempre positivo ed è maggiore di uno per $|Q_2|< 2Q_1$.
+\vspace{3mm}
+
+L'efficienza di una pompa di calore o coefficiente di guadagno, indica il rapporto fra il calore ceduto al corpo caldo e il lavoro compiuto sul sistema. Si indica con la kappa $K$.
+\begin{equation}
+    K=\frac{|Q_2|}{|W|}
+\end{equation}
+Si ha che poiché la trasformazione è ciclica:
+\begin{equation}
+    |W|=|Q_2|-Q_1
+\end{equation}
+Il coefficiente di guadagno è quindi sempre positivo e diventa perciò:
+\begin{equation}
+    K=\frac{|Q_2|}{|Q_2|-Q_1}
+\end{equation}
+
+Si hanno quindi le seguenti formule per rendimento e coefficienti:
+\begin{equation}
+    \eta=1-\frac{T_1}{T_2}; \qquad \omega=\frac{T_1}{T_2-T_1}; \qquad K=\frac{T_2}{T_2-T_1}.
+\end{equation}
+
+
+\subsection{Il secondo principio}
+Enunciati di Kelvin e di Clausius:
+\vspace{5mm}
+
+\textit{Kelvin: è impossibile ottenere una trasformazione ciclica dove il calore di una sola sorgente è convertito totalmente in lavoro.}
+
+\textit{Clausius: è impossibile il verificarsi di una trasformazione termodinamica il cui unico risultato sia uno spostamento di calore da un corpo più freddo a uno più caldo.}
+\vspace{5mm}
+
+I due enunciati sono equivalenti. Come conseguenze, il rendimento di una macchina termica non può arrivare mai a $1$ e c'è sempre bisogno di una forza che agisca su una macchina frigorifera.
+
+\subsubsection{Il teorema di Carnot}
+Il teorema di Carnot afferma che:
+\vspace{3mm}
+
+\textit{Il rendimento di tutte le macchine termiche reversibili fra due serbatoi di calore è uguale e dipende dalla temperatura dei serbatoi.}
+
+\textit{Il rendimento massimo di una macchina termica fra due serbatoi a temperature prefissate è il rendimento di una macchina termica reversibile.}
+\vspace{3mm}
+
+Una macchina reversibile è chiamata anche macchina di Carnot. Ma sono reversibili anche macchine che non seguono il ciclo di Carnot (come ad esempio il ciclo Stirling). Il ciclo di Carnot è formato da espansione isoterma, espansione adiabatica, compressione isoterma, compressione adiabatica.
+
+\subsection{L'entropia}
+L'entropia è una funzione di stato definita come:
+\begin{equation}
+    \Delta S=\frac{Q}{T}=\sum_{i=1}^n\frac{Q_i}{T_1}
+\end{equation}
+Essendo una funzione di stato può essere calcolata fra due stati estremi e risulta:
+\begin{equation}
+    \Delta S_{AB}=nRln\frac{V_B}{V_A}+nC_Vln\frac{T_A}{T_B}
+\end{equation}
+\vspace{3mm}
+
+\textit{La variazione dell'entropia totale di un sistema chiuso è sempre positiva o nulla per le trasformazioni reversibili.}
+\vspace{3mm}
+
+\begin{equation}
+    \Delta S \geq 0
+\end{equation}
+
+\subsubsection{Le trasformazioni con l'entropia}
+La variazione di entropia varia in base al tipo di trasformazione effettuato ed è:
+\begin{equation}
+    \begin{cases}
+        (isobara) \; &\Delta S =nC_p\,ln(T_f/T_i)\\
+        (isocora) \; &\Delta S =nC_V\,ln(T_f/T_i)\\
+        (isoterma) \; &\Delta S =nR\,ln(V_f/V_i)=nR\,ln(p_i/p_f)\\
+        (adiabatica) \; &\Delta S =0\\
+        (qualunque) \; &\Delta S =nR\,ln(V_f/V_i)+nC_V\,ln(T_i/T_f)
+    \end{cases}
+\end{equation}
+
+
+
+
+\section{Elettromagnetismo}
+Nel nostro sistema possono inoltre essere presenti anche campi elettrici e magnetici, che interagiscono fra di loro e con le particelle.
+Due costanti importanti sono $\mu_0$, la permeabilità magnetica del vuoto ($\mu_0=12,56 \times 10^{-7} T\,m\,A^{-1}$) e $\epsilon_0$, la costante dielettrica del vuoto ($\epsilon_0=8,854 \times 10^{-12} C^2\,N^{-1}\,m^{-2}$).
+
+L'unità di misura dei campi elettrici è il Newton su Coloumb: $[N\,C^{-1}]$
+
+L'unità di misura dei campi magnetici è il Tesla: T $[N\,A^{-1}\,m^{-1}]$
+
+
+\subsection{Elettrostatica}
+La carica elettrica è quantizzata, cioè è espressa in multipli di un valore preciso, come la carica di un elettrone (può essere cambiata di segno per protoni e positroni o corpi carichi in generale) ($e=-1.6 \times 10^{-19} C$):
+\begin{equation}
+    q=Ne
+\end{equation}
+La legge di Coulomb afferma che la forza esercitata da una particella carica su un'altra è:
+\begin{equation}
+    F=k\frac{q_1 q_2}{r^2}
+\end{equation}
+Dove:
+\begin{equation}
+    k=\frac{1}{4\pi\epsilon_0}=9.0\times 10^{9} N\,m^2\,C^{-2}
+\end{equation}
+Il campo elettrico è definito come la forza che una particella subirebbe fratto la carica della particella stessa:
+\begin{equation}
+    E=\frac{F}{q}=\frac{kQ}{r^2}
+\end{equation}
+Analogamente potenziale elettrico indica l'energia potenziale relativa alla forza di Coulomb per unità di carica e si misura in volt $V$.
+\begin{equation}
+    V=\frac{U}{q}
+\end{equation}
+Il campo elettrico può essere considerato uniforme per distanze $s<<A$, dove $A$ è l'area della superficie piana su cui è distribuita la carica e quindi si avrà che $V=Es$.
+
+In un mezzo la costante dielettrica $\epsilon_m$ può essere diversa dalla costante nel vuoto. In generale si usa:
+\begin{equation}
+    \epsilon_m=\epsilon_0\,\epsilon_r
+\end{equation}
+Dove $\epsilon_r$ è la costante dielettrica relativa del materiale.
+Il campo generato da un conduttore sferico di raggio $R<r$ è:
+\begin{equation}
+    E=\frac{Q}{4\pi r^2\epsilon_0}
+\end{equation}
+
+\subsubsection{Il teorema di Gauss}
+Il flusso del vettore campo elettrico per la definizione di flusso è:
+\begin{equation}
+    \Phi_E=\vec{E}\cdot\vec{S}=ES\cos{\theta}
+\end{equation}
+Inoltre il teorema di Gauss per il campo elettrico afferma che:
+\begin{equation}
+    \Phi_E=\frac{Q}{\epsilon_0}
+\end{equation}
+Il flusso di campo elettrico è quindi proporzionale alla carica contenuta dalla superficie considerata.
+
+\subsubsection{I condensatori a facce piane}
+La capacità $C$ di un condensatore a facce piane è:
+\begin{equation}
+    C=\epsilon\frac{A}{s}
+\end{equation}
+Mentre la sua densità di carica superficiale è:
+\begin{equation}
+    \sigma=\frac{Q}{S}
+\end{equation}
+Il campo elettrico generato tra due lastre parallele di carica opposta è:
+\begin{equation}
+    E=\frac{\sigma}{\epsilon_m}
+\end{equation}
+Il campo elettrico generato da una lastra è quindi metà:
+\begin{equation}
+    E=\frac{\sigma}{2\epsilon_m}
+\end{equation}
+Che è equivalente all'espressione del teorema di Coulomb, che esprime il campo elettrico in prossimità di un conduttore.
+La densità di energia $u$ è:
+\begin{equation}
+    u=\frac{1}{2}\epsilon_m E^2
+\end{equation}
+L'energia potenziale può anche essere espressa come:
+\begin{equation}
+    U=\frac{1}{2}CV^2
+\end{equation}
+
+
+\subsection{Magnetismo}
+\subsubsection{La legge di Biot-Savart}
+La legge di Biot-Savart dice che abbiamo un filo percorso da una corrente $i$, si formerà un campo magnetico che a distanza $r$ dal filo avrà modulo:
+\begin{equation}
+    B=\mu_0 \frac{i}{2\pi r}
+\end{equation}
+Per scegliere il verso del campo magnetico si usa la regola della mano destra, pollice nella direzione della corrente, il campo magnetico è orientato nel verso in cui si piegano le dita.
+
+\subsubsection{Le spire e i solenoidi}
+Il campo magnetico al centro di un numero $N$ di spire circolari di raggio $R$ percorse da una corrente $i$ è invece:
+\begin{equation}
+    B=\mu_0 \frac{Ni}{2 R}
+\end{equation}
+Analogamente a prima, il verso del campo magnetico stavolta è nella direzione del pollice, mentre le dita sono curvate nel verso della corrente. Per molte spire si ha un solenoide, e nel caso in cui la lunghezza $l$ è molto maggiore del raggio, il campo magnetico è:
+\begin{equation}
+    B=\mu_0 \frac{Ni}{l}
+\end{equation}
+\subsubsection{La circuitazione}
+La circuitazione di un campo magnetico $B$ su una linea chiusa $L$, per semplicità un cerchio, è dato da:
+\begin{equation}
+    C_L(\Vec{B})=\sum_{i=1}^n \Vec{B}_i \cdot \Delta \Vec{l}_i=\int_L \Vec{B} \cdot d\Vec{l}
+\end{equation}
+La circuitazione si misura in Tesla per metro $[T\cdot m]$.
+
+\subsubsection{Il teorema di Ampere}
+Il teorema di Ampere afferma che la circuitazione di un circuito chiuso contente un certo numero di correnti $i_k$, di segno opposto se di verso opposto, è uguale a:
+\begin{equation}
+    C_L(\Vec{B})=\mu_0 \sum_{k=1}^n i_k
+\end{equation}
+Nel caso più semplice la dimostrazione è facile:
+\begin{equation}
+    C_L(\Vec{B})=\sum_{i=1}^n \Vec{B}_i \cdot \Delta \Vec{l}_i=B\sum_{i=1}^n \Delta l = \mu_0 \frac{i}{2\pi r}(2\pi r)=\mu_0 i
+\end{equation}
+
+\subsubsection{Le correnti indotte}
+Come una corrente elettrica può generare un campo magnetico, vale anche l'inverso. Faraday scoprì che le variazioni di campo magnetico all'interno di una bobina causano una corrente indotta. 
+\subsubsection{Il flusso magnetico}
+Il flusso $\Phi$ di un campo magnetico $\Vec{B}$ all'interno di una bobina è definito come:
+\begin{equation}
+    \Phi (\Vec{B})=NSB\cos{\theta}
+\end{equation}
+Dove $N$ è il numero di spire e $S$ l'area della spira. Il flusso si misura in Weber: Wb $[T \, m^2]$.
+
+\subsubsection{La forza elettromotrice indotta}
+La variazione di flusso nell'intervallo di tempo è chiamata forza elettromotrice indotta, ma ha le unità di una differenza di potenziale ($V$):
+\begin{equation}
+    f.e.m._i=-\frac{\Delta \Phi (\Vec{B})}{\Delta t}
+\end{equation}
+Lenz aggiunse il segno meno per significare che la f.e.m. si oppone alla variazione di flusso. Questa legge è chiamata legge di Faraday-Neumann-Lenz.
+Per la prima legge di Ohm si ha inoltre che la corrente è pari a:
+\begin{equation}
+    i=-\frac{1}{R}\frac{\Delta \Phi (\Vec{B})}{\Delta t}
+\end{equation}
+
+\subsubsection{La corrente alternata}
+Girando una bobina in un campo magnetico si può ottenere una corrente alternata:
+\begin{align*}
+    i&=-\frac{1}{R}\frac{\Delta \Phi (\Vec{B})}{\Delta t}\\
+    i&=-\frac{1}{R}\frac{\Delta [SB\cos{\omega t}]}{\Delta t}\\
+    i&=\frac{SB\omega\sin{\omega t}}{R}\\
+    i&=i_{max} \sin{\omega t}
+\end{align*}
+
+
+\subsection{Forze prodotte dai campi}
+\subsubsection{La forza di Lorentz}
+Una particella di carica $q$, positiva o negativa, che si trova in un campo elettrico $\vec{E}$ e magnetico $\Vec{B}$, subisce una forza, detta di Lorentz, pari a:
+\begin{equation}
+    \Vec{F}_L=q(\vec{E}+\vec{v}\wedge \Vec{B})
+\end{equation}
+Pertanto in assenza di campo elettrico una particella compie orbite circolari o elicoidali di raggio $r$ e periodo $T$ pari a:
+\begin{equation}
+    \begin{cases}
+        r=mv/qB\\
+        T=2\pi m/qB
+    \end{cases}
+\end{equation}
+
+\subsubsection{Un filo immerso in un campo magnetico}
+Dato un filo attraversato da una corrente $i$ e di lunghezza $l$ immerso in un campo magnetico uniforme $B$, subisce una forza $F$ tale che:
+\begin{equation}
+    \vec{F}=i\; \Vec{l} \wedge \Vec{B} \qquad \implies \qquad F=ilB\sin{\theta}
+\end{equation}
+Anche in questo caso bisogna seguire la regola della mano destra. 
+Invertendo questa formula si vede che $B=F/il$ e che quindi il Tesla, l'unità di misura del campo magnetico è: $[T]=[N\,A^{-1}\,m^{-1}]$.
+
+
+\subsubsection{La legge elettromagnetica di Ampere}
+La legge elettromagnetica di Ampere afferma che due fili di lunghezza infinita percorsi da correnti $i_1,i_2$, posti a distanza $d$ uno dall'altro, subiscono una forza per unità di lunghezza, di attrazione se le correnti sono concordi o repulsione se discordi, pari a:
+\begin{equation}
+    \frac{F}{l}=\mu_0 \frac{i_1 i_2}{2\pi d}
+\end{equation}
+
+
+
+\section{Circuiti}
+\subsection{La legge di Ohm}
+In un circuito dove si muove una carica $q$ in un intervallo di tempo $t$ la corrente è:
+\begin{equation}
+    I=\frac{q}{t}
+\end{equation}
+L'intensità di corrente in funzione del numero di cariche e la velocità di deriva è:
+\begin{equation}
+    I=nAev_d
+\end{equation}
+Dove $n$ è il numero di elettroni al metro cubo e $A$ l'area della sezione.
+La legge di Ohm afferma che:
+\begin{equation}
+    V=IR
+\end{equation}
+Dove $R$ è la resistenza misurata in Ohm $\Omega$, e può essere calcolata tramite la resistività $\rho$, costante tipica di ogni materiale:
+\begin{equation}
+    R=\rho \frac{l}{A}
+\end{equation}
+Resistività e resistenza dipendono dalla temperatura secondo le leggi di Gay-Lussac:
+\begin{equation}
+    \begin{cases}
+        \rho=\rho_0(1+\alpha \Delta T)\\
+        R=R_0(1+\alpha \Delta T)\\
+    \end{cases}
+\end{equation}
+La potenza di un resistore è data da:
+\begin{equation}
+    P=IV=I^2R=V^2/R
+\end{equation}
+Altre proprietà sono la capacità $C$, misurata in Farad $F$, che è:
+\begin{equation}
+    C=\frac{Q}{V}
+\end{equation}
+E la conducibilità $\sigma$, cioè è l'inverso della resistività.
+La resistenza di più resistori in serie è la somma delle resistenze:
+\begin{equation}
+    R_s=\sum_i R_i
+\end{equation}
+L'inverso della resistenza di più resistori in parallelo è la somma degli inversi delle resistenze:
+\begin{equation}
+    \frac{1}{R_p}=\sum_i \frac{1}{R_i}
+\end{equation}
+Per due resistori in parallelo si ha dunque:
+\begin{equation}
+    R_{tot}=\frac{R_1 R_2}{R_1+R_2}
+\end{equation}
+Le leggi di Kirchhoff esprimono relativamente la conservazione della carica e dell'energia:
+\begin{equation}
+    \begin{cases}
+        \sum_i I_i=0\\
+        \sum_i V_i=0
+    \end{cases}
+\end{equation}
+La costante di tempo $\tau$ è il prodotto di resistenza e capacità:
+\begin{equation}
+    \tau=RC
+\end{equation}
+La tensione di un circuito durante la fase di carica è:
+\begin{equation}
+    V=V_0(1-e^{-t/\tau})
+\end{equation}
+Durante la fase di scarica invece è:
+\begin{equation}
+    V=V_0e^{-t/\tau}
+\end{equation}
+L'intensità di corrente è sempre, in carica o scarica:
+\begin{equation}
+    I=I_0e^{-t/\tau}
+\end{equation}
+Infine le intensità di corrente in un amperometro e in un voltometro sono:
+\begin{equation}
+    I_a=\frac{I R_s}{r+R_s}
+\end{equation}
+\begin{equation}
+    I_v=\frac{V}{r+R_s}
+\end{equation}
+
+
+\section{Ottica fisica}
+Il campo elettromagnetico, interagendo con se stesso, può sostenere onde che formano la luce. L'ottica fisica si occupa di studiare la luce sotto forma di onda, considerando radiazione elettromagnetica. Se due onde si sovrappongono si ha un'interferenza, o costruttiva o distruttiva. 
+\subsection{Le onde}
+L'equazione generale di un'onda è della forma:
+\begin{equation}
+    y=A\sin{\bigg(\frac{2\pi}{\lambda}x-\omega t + \phi\bigg)}
+\end{equation}
+Dove $A$ è l'ampiezza dell'onda, $\omega$ è $2\pi f$ (la frequenza), $\lambda$ è la lunghezza d'onda e $\phi$ la fase.
+L'interferenza risulta costruttiva se le onde si uniscono sulle creste o sulle valli, mentre distruttiva altrimenti, poiché si cancellano.
+Dato un punto a una distanza $x_1$ dalla prima sorgente luminosa e $x_2$ dalla seconda, se le onde hanno la stessa lunghezza d'onda si avrà che:
+l'interferenza è costruttiva se
+\begin{equation}
+    |x_2-x_1|=m\lambda
+\end{equation}
+ed è distruttiva se:
+\begin{equation}
+    |x_2-x_1|=(2m+1)/2 \cdot\lambda
+\end{equation}
+
+\subsection{L'interferenza fra due fenditure}
+Date due fenditure a distanza $d$ che causano un pattern di interferenze a distanza $L$ su un muro parallelo a quello delle fenditure, sia $y$ la distanza dal punto dove un raggio colpisce il muro perpendicolarmente dalla fessura più alta.
+Le frange chiare e le frange scure si troveranno rispettivamente a valori di $y$ tali che:
+\begin{equation}
+    \begin{cases}
+        m\,\lambda=yd/L\\
+        (2m+1)/2 \cdot\lambda=yd/L\\
+    \end{cases}
+\end{equation}
+La separazione fra due frange chiare successive perciò è:
+\begin{equation}
+    \Delta y = \lambda L/d
+\end{equation}
+
+\subsection{La diffrazione da una fenditura}
+Per la diffrazione da una singola fenditura di larghezza $d$ valgono le stesse formule, dove però $y/L$ è sostituito con il seno di $alpha$, cioè l'angolo fra le due frange scure più centrali.
+
+\subsection{Il reticolo di diffrazione}
+Dato un reticolo di diffrazione con $d$ passo del reticolo, i punti chiari si trovano sempre a $m\lambda=d\sin{\alpha}$.
+
+
+\section{Ottica geometrica}
+Considerando invece la luce come un insieme di raggi, si ha l'ottica geometrica, che è spiegata da un insieme di fenomeni semplici, come ad esempio:
+
+\subsection{La riflessione}
+Se un raggio arriva incidente su una superficie riflettente, verrà rimandato indietro con un angolo $\alpha$ rispetto alla normale, sullo stesso piano, simmetrico e uguale in ampiezza all'angolo di incidenza.
+
+
+\subsection{La rifrazione}
+In ogni materiale la luce si muove a velocità diverse. La velocità massima è $c$, nel vuoto. Se un raggio di luce passa da un materiale a un altro, cambia l'angolo che forma con la normale e la velocità con cui viaggia.
+L'indice di rifrazione $n$ di un mezzo è definito come la velocità della luce nel vuoto $c$ fratto la velocità della luce nel mezzo $v$:
+\begin{equation}
+    n=\frac{c}{v}
+\end{equation}
+La legge di Snell afferma che nel passaggio da un mezzo a un altro vale la seguente relazione:
+\begin{equation}
+    \begin{cases}
+        n_1 \cos{\theta_1}= n_2 \cos{\theta_2} \\
+        v_2 \cos{\theta_1}= v_1 \cos{\theta_2}
+    \end{cases}
+\end{equation}
+Solitamente una parte della luce viene riflessa e una parte rifratta, ma se l'angolo è maggiore di $90^{\small\circ}$ la luce può solo essere riflessa. Su questo fenomeno si basano i cavi della fibra ottica.
+L'angolo limite oltre il quale un raggio di luce viene solo riflesso quindi è:
+\begin{equation}
+    \theta_{1}=\arcsin{\frac{n_2}{n_1}}
+\end{equation}
+
+
+\subsection{Gli specchi}
+Gli specchi possono essere concavi o convessi (oppure piani, dando origine alla riflessione). Di solito si considerano specchi sferici, che sono concavi se consideriamo l'interno e convessi l'esterno.
+
+Per gli specchi sferici vale la legge dei punti coniugati, cioè detta $p$ la distanza dell'oggetto e $q$ la distanza dell'immagine (dallo specchio):
+\begin{equation}
+    \frac{1}{p}+\frac{1}{q}=\frac{1}{f}
+\end{equation}
+Dove $f$ è la distanza focale dello specchio.
+
+Per uno specchio concavo se $p$ è maggiore di $2f$ l'immagine è reale, capovolta e rimpicciolita. Se $p=2f$ l'immagine è reale, della stessa dimensione, ma capovolta. Per $p$ comprese fra $f$ e $2f$ l'immagine è reale, capovolta e ingrandita. Se $p$ è minore di $f$ l'immagine sarà virtuale, ingrandita e diritta.
+Gli specchi convessi forniscono sempre invece un'immagine virtuale, diritta e rimpicciolita.
+Per specchi di piccola apertura $r=2f$.
+L'ingrandimento $G$ è dato da:
+\begin{equation}
+    G=-\frac{q}{p}
+\end{equation}
+Se è negativo l'immagine è capovolta.
+
+\subsubsection{Come costruire l'immagine}
+Dato un corpo posto davanti a uno specchio concavo, l'immagine si troverà nel punto di intersezione di tre linee:
+\begin{enumerate}
+    \item La linea parallela alla normale dello specchio che parte della cima dell'oggetto e viene riflessa attraverso il fuoco
+    \item La linea che parte dalla cima dell'oggetto, passa per il fuoco e torna indietro parallelamente alla normale
+    \item La linea che parte dalla cima dell'oggetto, passa per il centro e torna indietro
+\end{enumerate}
+
+\subsection{Il diottro sferico}
+Quando la superficie di contatto fra due materiali con indici di rifrazione diversa è una sfera si ha il caso del diottro sferico.
+Per il diottro sferico vale la seguente relazione:
+\begin{equation}
+    \frac{n_1}{p}=\frac{n_2}{q}=\frac{n_2-n_1}{r}
+\end{equation}
+
+\subsection{Le lenti}
+Le lenti che consideriamo sono sottili, cioè di spessore trascurabile, sono trasparenti e hanno facce curve. Le lenti possono essere convergenti se raggi paralleli convergono in un punto detto fuoco, oppure divergenti se i raggi divergono, ma sembrano partiti, congiungendo i prolungamenti, da un singolo punto detto anch'esso fuoco. In entrambi i casi vale l'equazione dei costruttori di lenti:
+\begin{equation}
+    \frac{1}{f}=(n-1)\bigg(\frac{1}{r_1}-\frac{1}{r_2}\bigg)
+\end{equation}
+Dove le $r$ sono misurate come distanza dal centro e indicano il raggio delle sfere dalle quali sono state prodotte le lenti.
+Per lenti convergenti $f>0$, per divergenti $f<0$.
+Le lenti convergenti possono essere di tre tipi:
+\begin{enumerate}
+    \item Biconvesse: $r_1>0$ e $r_2<0$
+    \item Piano-convessa: $r_1=\infty$ e $r_2<0$
+    \item Menisco: $r_2>r_1>0$
+\end{enumerate}
+Similarmente le lenti divergenti sono divise in:
+\begin{enumerate}
+    \item Biconcave: $r_1<0$ e $r_2>0$
+    \item Piano-concave: $r_1=\infty$ e $r_2>0$
+    \item Menisco: $r_1>r_2>0$
+\end{enumerate}
+Per ogni altro caso il problema diventa un diottro sferico o rifrazione semplice.
+\subsubsection{I casi con le lenti}
+Un raggio parallelo all'asse ottico attraversa la lente senza subire deviazioni. Vale sempre la legge dei punti coniugati e l'ingrandimento rimane invariato.
+Quando $p$ è positivo l'oggetto è davanti alla lente, se $q$ è negativo l'immagine è davanti alla lente
+Il potere diottrico $P$ di una lente è definito come:
+\begin{equation}
+    P=\frac{1}{f}
+\end{equation}
+Per lenti divergenti si ha sempre un'immagine virtuale, diritta e rimpicciolita ($0<G<1$). Inoltre si ha che:
+\begin{equation}
+    \begin{cases}
+        q<0\\
+        |q|<p\\
+        |q|<|f|
+    \end{cases}
+\end{equation}
+Per lenti convergenti si hanno sei casi diversi.
+\begin{enumerate}
+    \item Se l'oggetto è infinitamente distante dalla lente si ha che l'immagine sarà puntiforme ($G=0$) e si troverà alla distanza focale ($q=f$, è reale).
+    \item Se l'oggetto è a distanza $p>2f$ si avrà immagine reale, capovolta e rimpicciolita ($f<q<2f$, $-1<G<0$).
+    \item Per $p=2f$ l'immagine sarà sempre reale e capovolta, ma avrà la stessa dimensione ($q=2f$, $G=-1$).
+    \item Se l'oggetto si trova fra la distanza focale e il doppio della distanza focale stessa ($f<p<2f$), l'immagine sarà capovolta, reale e ingrandita ($q>2f$, $G<-1$).
+    \item Se l'oggetto è esattamente alla distanza focale ($p=f$), non si forma alcuna immagine ($q=\infty$).
+    \item Infine per oggetti fra la lente e il fuoco ($p<f$), l'immagine sarà virtuale, diritta e ingrandita ($q<0$, $|q|>p$, $G>1$).
+\end{enumerate}
+
+
+
+
+\section*{Conclusione} \addcontentsline{toc}{section}{$\quad$Conclusione}
+E' finito. Se vincete di nuovo voi del Volta almeno mi sentirò parte del team. Fatemi sognare. 
+
+
+
+
+\end{document}
